@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "This codebook is the Summary of tidy.txt result set.\n\nIdentifiers:\n\nsubject - id of the test subject\nactivity - id of the activity which performed on test subject\n\nMeasurements:\n\ntBodyAccMeanX \ntBodyAccMeanY \ntBodyAccMeanZ \ntBodyAccStdX \ntBodyAccStdY \ntBodyAccStdZ \ntGravityAccMeanX \ntGravityAccMeanY \ntGravityAccMeanZ \ntGravityAccStdX \ntGravityAccStdY \ntGravityAccStdZ \ntBodyAccJerkMeanX \ntBodyAccJerkMeanY\ntBodyAccJerkMeanZ \ntBodyAccJerkStdX \ntBodyAccJerkStdY \ntBodyAccJerkStdZ \ntBodyGyroMeanX \ntBodyGyroMeanY \ntBodyGyroMeanZ \ntBodyGyroStdX \ntBodyGyroStdY \ntBodyGyroStdZ \ntBodyGyroJerkMeanX \ntBodyGyroJerkMeanY \ntBodyGyroJerkMeanZ \ntBodyGyroJerkStdX \ntBodyGyroJerkStdY \ntBodyGyroJerkStdZ \ntBodyAccMagMean \ntBodyAccMagStd \ntGravityAccMagMean \ntGravityAccMagStd \ntBodyAccJerkMagMean \ntBodyAccJerkMagStd \ntBodyGyroMagMean \ntBodyGyroMagStd \ntBodyGyroJerkMagMean \ntBodyGyroJerkMagStd \nfBodyAccMeanX \nfBodyAccMeanY \nfBodyAccMeanZ \nfBodyAccStdX \nfBodyAccStdY \nfBodyAccStdZ \nfBodyAccMeanFreqX \nfBodyAccMeanFreqY \nfBodyAccMeanFreqZ \nfBodyAccJerkMeanX \nfBodyAccJerkMeanY \nfBodyAccJerkMeanZ \nfBodyAccJerkStdX \nfBodyAccJerkStdY \nfBodyAccJerkStdZ \nfBodyAccJerkMeanFreqX \nfBodyAccJerkMeanFreqY \nfBodyAccJerkMeanFreqZ \nfBodyGyroMeanX \nfBodyGyroMeanY \nfBodyGyroMeanZ \nfBodyGyroStdX \nfBodyGyroStdY \nfBodyGyroStdZ \nfBodyGyroMeanFreqX \nfBodyGyroMeanFreqY \nfBodyGyroMeanFreqZ \nfBodyAccMagMean \nfBodyAccMagStd \nfBodyAccMagMeanFreq \nfBodyBodyAccJerkMagMean \nfBodyBodyAccJerkMagStd \nfBodyBodyAccJerkMagMeanFreq \nfBodyBodyGyroMagMean \nfBodyBodyGyroMagStd \nfBodyBodyGyroMagMeanFreq \nfBodyBodyGyroJerkMagMean\nfBodyBodyGyroJerkMagStd\nfBodyBodyGyroJerkMagMeanFreq\n\nActivity Labels:\n\nWALKING (value 1): subject was walking during the test\nWALKING_UPSTAIRS (value 2): subject was walking up a staircase during the test\nWALKING_DOWNSTAIRS (value 3): subject was walking down a staircase during the test\nSITTING (value 4): subject was sitting during the test\nSTANDING (value 5): subject was standing during the test\nLAYING (value 6): subject was laying down during the test",
+    "created" : 1552840060687.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3202516740",
+    "id" : "94B8133D",
+    "lastKnownWriteTime" : 1552840586,
+    "last_content_update" : 1552840586398,
+    "path" : "~/data_science/GettingAndCleaningAssignment.R/CodeBook.md",
+    "project_path" : "CodeBook.md",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

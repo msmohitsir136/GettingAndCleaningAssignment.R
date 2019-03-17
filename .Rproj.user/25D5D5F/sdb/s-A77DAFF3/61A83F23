@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# NOTE: Download the dataset if it does not already exist in the working directory\nif(!file.exists(\"./data\")) {\n  dir.create(\"./data\")\n}\n\nfileUrl <- \"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip\"\nif(!file.exists(\"./data/Dataset.zip\")) {\n  download.file(fileUrl, destfile = \"./data/Dataset.zip\", method = \"curl\")\n}\n\n# NOTE: Unzip the file\nzipPath <- \"./data/Dataset.zip\"\nexportPath <- \"./data\"\nif(!file.exists(\"./data/UCI HAR Dataset\")) {\n  unzip(zipPath, exdir = exportPath)\n}\n\n# NOTE: Load the activity and feature info\nactivityLabels <- read.table(\"./data/UCI HAR Dataset/activity_labels.txt\")\nactivityLabels[, 2] <- as.character(activityLabels[, 2])\nfeatures <- read.table(\"./data/UCI HAR Dataset/features.txt\")\nfeatures[, 2] <- as.character(features[, 2])\n\n# NOTE: Loads both the training and test datasets, keeping only those columns which reflect a mean or standard deviation\nfeaturesWanted <- grep(\".*mean.*|.*std.*\", features[,2])\nfeaturesWanted.name <- features[featuresWanted, 2]\nfeaturesWanted.name <- gsub(\"-mean\", \"Mean\", featuresWanted.name)\nfeaturesWanted.name <- gsub(\"-std\", \"Std\", featuresWanted.name)\nfeaturesWanted.name <- gsub(\"[-()]\", \"\", featuresWanted.name)\n\n\n# NOTE: Loads both the training and test datasets\ntrain <- read.table(\"./data/UCI HAR Dataset/train/X_train.txt\")[featuresWanted]\ntrainActivities <- read.table(\"./data/UCI HAR Dataset/train/Y_train.txt\")\ntrainActivities <- read.table(\"./data/UCI HAR Dataset/train/y_train.txt\")\ntrainSubjects <- read.table(\"./data/UCI HAR Dataset/train/subject_train.txt\")\ntrain <- cbind(trainSubjects, trainActivities, train)\n\ntest <- read.table(\"./data/UCI HAR Dataset/test/X_test.txt\")[featuresWanted]\ntestActivities <- read.table(\"./data/UCI HAR Dataset/test/Y_test.txt\")\ntestActivities <- read.table(\"./data/UCI HAR Dataset/test/y_test.txt\")\ntestSubjects <- read.table(\"./data/UCI HAR Dataset/test/subject_test.txt\")\ntest <- cbind(testSubjects, testActivities, test)\n\n# NOTE: Merges the two datasets\nallData <- rbind(train, test)\ncolnames(allData) <- c(\"subject\", \"activity\", featuresWanted.name)\n\n# NOTE: Converts the activity and subject columns into factors\nallData$activity <- factor(allData$activity, levels = activityLabels[, 1], labels = activityLabels[, 2])\nallData$subject <- as.factor(allData$subject)\nallData.melted <- melt(allData, id = c(\"subject\", \"activity\"))\n\n# NOTE: Creates a tidy dataset that consists of the average (mean) value of each variable for each subject and activity pair\nlibrary(reshape2)\nallData.melted <- melt(allData, id = c(\"subject\", \"activity\"))\nallData.mean <- dcast(allData.melted, subject + activity ~ variable, mean)\nwrite.table(allData.mean, \"./Output/tidy.txt\", row.names = FALSE, quote = FALSE)\n",
+    "created" : 1552839786516.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "147739073",
+    "id" : "61A83F23",
+    "lastKnownWriteTime" : 1552841276,
+    "last_content_update" : 1552841276297,
+    "path" : "~/data_science/GettingAndCleaningAssignment.R/Scripts/run_analysis.R",
+    "project_path" : "Scripts/run_analysis.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
